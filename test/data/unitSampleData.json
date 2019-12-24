@@ -1,0 +1,97 @@
+{
+  "userDetails": {
+    "invalidEmail": "test@gmail.com",
+    "email": "testuser@gmail.com",
+    "encryptedPassword": "$2a$10$lc7Tu7KrCcE18HI1xFPHu./X40J41GrWq/nptPa6QhnQIMjfrYQue",
+    "role": "buyer",
+    "password": "User@123",
+    "invalidPassword": "InvalidUser@123",
+    "oldPassword": "User@123",
+    "newPassword": "Admin@123",
+    "invalidOldPassword": "InvalidUser@123",
+    "invalidRPPId": 1800,
+    "validRPPId": 1
+  },
+  "adminDetails": {
+    "role": "admin",
+    "email": "testadmin@verdeblocks.com",
+    "encryptedPassword": "$2a$10$lc7Tu7KrCcE18HI1xFPHu./X40J41GrWq/nptPa6QhnQIMjfrYQue",
+    "password": "User@123"
+  },
+  "buyerDetails": {
+    "role": "buyer",
+    "email": "testbuyer@verdeblocks.com",
+    "encryptedPassword": "$2a$10$lc7Tu7KrCcE18HI1xFPHu./X40J41GrWq/nptPa6QhnQIMjfrYQue",
+    "password": "User@123",
+    "companyName": "Newgen",
+    "address": "Noida India",
+    "contactName": "John",
+    "title": "CTO",
+    "phone": "9879879870",
+    "signetAccount": "1112550548",
+    "creditLimit": 600,
+    "creditAvailable": 500
+  },
+  "sellerDetails": {
+    "role": "seller",
+    "email": "newSeller@verdeblocks.com",
+    "encryptedPassword": "$2a$10$lc7Tu7KrCcE18HI1xFPHu./X40J41GrWq/nptPa6QhnQIMjfrYQue",
+    "password": "User@123",
+    "companyName": "Newgen",
+    "address": "Noida India",
+    "contactName": "John",
+    "title": "CTO",
+    "phone": "9879879870",
+    "signetAccount": "1112550548",
+    "creditLimit": 600,
+    "creditAvailable": 500,
+    "page": 1,
+    "limit": 5,
+    "filter": "New",
+    "wrongFilter": "All",
+    "RPPId": 2,
+    "timestamp": 1551087715123,
+    "bidValue": 1500
+  },
+  "RPPDetails": {
+    "deliveryTimeFrom": 1584526170000,
+    "deliveryTimeTo": 1594536170000,
+    "shape": "ONPEAK",
+    "volume": 100,
+    "primaryPowerSource": "Solar",
+    "RECVolume": 120,
+    "RECAttribute": "Least cost",
+    "expireInitialResponseBy": 1552897732000,
+    "initialResponseBy": 1584506170000,
+    "timezone": "PST",
+    "totalEstimateValue": 3000000,
+    "totalEstimateMonthlyValue": 20000,
+    "status": "Funded",
+    "escrowReciepts": [
+      "Receipt1"
+    ],
+    "escrowDueBy": 1584516170000,
+    "lastPaymentToSellerOn": 1584516170000,
+    "sellerRanking": [
+      1,
+      2,
+      3
+    ],
+    "ISOzoneId": 3,
+    "RECId": 1
+  },
+  "pagination": {
+    "fundedFilter": "Funded",
+    "initiatedFilter": "Initiated",
+    "expiredFilter": "Expired",
+    "rejectedFilter": "Rejected",
+    "page": 1,
+    "limit": 3
+  },
+  "transactionDetails": {
+    "volume": 1500,
+    "amount": 1500,
+    "toSellerId": 3,
+    "recieptNumber": "RECIPET101"
+  }
+}

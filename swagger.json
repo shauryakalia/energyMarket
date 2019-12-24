@@ -1,0 +1,2513 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Verde Blocks",
+        "description": "Swagger UI for VerdeBlocks",
+        "termsOfService": "http://swagger.io/terms/"
+    },
+    "host": "52.66.154.45:5000",
+    "basePath": "/api",
+    "tags": [
+        {
+            "name": "User",
+            "description": "API for User"
+        },
+        {
+            "name": "Admin",
+            "description": "API for Admin"
+        },
+        {
+            "name": "Buyer",
+            "description": "API for Buyer"
+        },
+        {
+            "name": "Seller",
+            "description": "API for Seller"
+        }
+    ],
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/login": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "description": "User Login",
+                "operationId": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "User Login Request",
+                        "schema": {
+                            "$ref": "#/definitions/LoginRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User SignUp success response",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "User does not exists",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Something went wrong",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Empty field in request",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Error response from DB",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/{id}/setPassword": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "description": "Set Password",
+                "operationId": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "x-access-token",
+                        "in": "header",
+                        "description": "an authorization header",
+                        "required": true
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Add set password Request",
+                        "schema": {
+                            "$ref": "#/definitions/SetPasswordResquest"
+                        }
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "User id",
+                        "schema": {
+                            "$ref": "#/definitions/GetAllBuyers"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Set password success response",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Something went wrong",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Empty field in request",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Error response from DB",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/{id}/RPP/{RPPId}": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "description": "Get RPP",
+                "operationId": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "x-access-token",
+                        "in": "header",
+                        "description": "an authorization header",
+                        "required": true
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "User id",
+                        "schema": {
+                            "$ref": "#/definitions/GetAllBuyers"
+                        }
+                    },
+                    {
+                        "name": "RPPId",
+                        "in": "path",
+                        "description": "RPP id",
+                        "schema": {
+                            "$ref": "#/definitions/GetAllBuyers"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get RPP success response",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Something went wrong",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Empty field in request",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Error response from DB",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/{id}/ISO": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "description": "Get all ISOs",
+                "operationId": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "x-access-token",
+                        "in": "header",
+                        "description": "an authorization header",
+                        "required": true
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "User id",
+                        "schema": {
+                            "$ref": "#/definitions/GetAllBuyers"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get all ISO success response",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Something went wrong",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Empty field in request",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Error response from DB",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/{id}/zone/{ISO}": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "description": "Get all zones in an ISO",
+                "operationId": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "x-access-token",
+                        "in": "header",
+                        "description": "an authorization header",
+                        "required": true
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "User id",
+                        "schema": {
+                            "$ref": "#/definitions/GetAllZones"
+                        }
+                    },
+                    {
+                        "name": "ISO",
+                        "in": "path",
+                        "description": "ISO",
+                        "schema": {
+                            "$ref": "#/definitions/GetAllZones"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get all zones of an ISO success response",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Something went wrong",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Empty field in request",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Error response from DB",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/{id}/timeZone": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "description": "Get all Time Zones",
+                "operationId": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "x-access-token",
+                        "in": "header",
+                        "description": "an authorization header",
+                        "required": true
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "User id",
+                        "schema": {
+                            "$ref": "#/definitions/GetAllBuyers"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get all time zones success response",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Something went wrong",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Empty field in request",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Error response from DB",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/{id}/states": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "description": "Get all states for RECs",
+                "operationId": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "x-access-token",
+                        "in": "header",
+                        "description": "an authorization header",
+                        "required": true
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "User id",
+                        "schema": {
+                            "$ref": "#/definitions/GetAllBuyers"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get all ISO success response",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Something went wrong",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Empty field in request",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Error response from DB",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/{id}/RECTypes/{state}": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "description": "Get all RECTypes of a state for RECs",
+                "operationId": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "x-access-token",
+                        "in": "header",
+                        "description": "an authorization header",
+                        "required": true
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "User id",
+                        "schema": {
+                            "$ref": "#/definitions/GetAllRECTypes"
+                        }
+                    },
+                    {
+                        "name": "state",
+                        "in": "path",
+                        "description": "state",
+                        "schema": {
+                            "$ref": "#/definitions/GetAllRECTypes"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get all zones of an ISO success response",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Something went wrong",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Empty field in request",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Error response from DB",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/{id}/years/{RECType}/{state}": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "description": "Get all years of a RECType of a state for RECs",
+                "operationId": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "x-access-token",
+                        "in": "header",
+                        "description": "an authorization header",
+                        "required": true
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "User id",
+                        "schema": {
+                            "$ref": "#/definitions/GetAllYears"
+                        }
+                    },
+                    {
+                        "name": "RECType",
+                        "in": "path",
+                        "description": "RECType",
+                        "schema": {
+                            "$ref": "#/definitions/GetAllYears"
+                        }
+                    },
+                    {
+                        "name": "state",
+                        "in": "path",
+                        "description": "state",
+                        "schema": {
+                            "$ref": "#/definitions/GetAllYears"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get all zones of an ISO success response",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Something went wrong",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Empty field in request",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Error response from DB",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/{id}/getSellers": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "description": "Get all sellers id and company name",
+                "operationId": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "x-access-token",
+                        "in": "header",
+                        "description": "an authorization header",
+                        "required": true
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "User id",
+                        "schema": {
+                            "$ref": "#/definitions/GetAllYears"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get all sellers success response",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Something went wrong",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Empty field in request",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Error response from DB",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/{id}/transaction/{RPPId}": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "description": "Get Transactions",
+                "operationId": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "x-access-token",
+                        "in": "header",
+                        "description": "an authorization header",
+                        "required": true
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "User id",
+                        "schema": {
+                            "$ref": "#/definitions/GetAllBuyers"
+                        }
+                    },
+                    {
+                        "name": "RPPId",
+                        "in": "path",
+                        "description": "RPP id",
+                        "schema": {
+                            "$ref": "#/definitions/GetRPPId"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get all Transaction for a RPP success response",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Something went wrong",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Empty field in request",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Error response from DB",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/admin/user": {
+            "post": {
+                "tags": [
+                    "Admin"
+                ],
+                "description": "Register Buyer/Seller",
+                "operationId": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "x-access-token",
+                        "in": "header",
+                        "description": "an authorization header",
+                        "required": true
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Add User Request",
+                        "schema": {
+                            "$ref": "#/definitions/AddUserRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Add User success response",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Something went wrong",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Empty field in request",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Error response from DB",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/admin/{id}/RPP": {
+            "get": {
+                "tags": [
+                    "Admin"
+                ],
+                "description": "Get All RPP",
+                "operationId": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "x-access-token",
+                        "in": "header",
+                        "description": "an authorization header",
+                        "required": true
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "User id",
+                        "schema": {
+                            "$ref": "#/definitions/GetAllBuyers"
+                        }
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "description": "filter",
+                        "schema": {
+                            "$ref": "#/definitions/GetAllBuyers"
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "page",
+                        "schema": {
+                            "$ref": "#/definitions/GetAllBuyers"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "limit",
+                        "schema": {
+                            "$ref": "#/definitions/GetAllBuyers"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get RPP success response",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Something went wrong",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Empty field in request",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Error response from DB",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/admin/{id}/buyer": {
+            "get": {
+                "tags": [
+                    "Admin"
+                ],
+                "description": "Get all Buyer",
+                "operationId": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "x-access-token",
+                        "in": "header",
+                        "description": "an authorization header",
+                        "required": true
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Admin id",
+                        "schema": {
+                            "$ref": "#/definitions/GetAllBuyers"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get all Buyer success response",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Something went wrong",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Empty field in request",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Error response from DB",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/{id}/seller": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "description": "Get all Seller",
+                "operationId": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "x-access-token",
+                        "in": "header",
+                        "description": "an authorization header",
+                        "required": true
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "User id",
+                        "schema": {
+                            "$ref": "#/definitions/GetAllSellers"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get all Seller success response",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Something went wrong",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Empty field in request",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Error response from DB",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/admin/{id}/digitalVault": {
+            "get": {
+                "tags": [
+                    "Admin"
+                ],
+                "description": "Get Digital Vault",
+                "operationId": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "x-access-token",
+                        "in": "header",
+                        "description": "an authorization header",
+                        "required": true
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Admin id"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get Digital vault success response",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Something went wrong",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Empty field in request",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Error response from DB",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/admin/initiateRPP": {
+            "put": {
+                "tags": [
+                    "Admin"
+                ],
+                "description": "Initiate an RPP",
+                "operationId": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "x-access-token",
+                        "in": "header",
+                        "description": "an authorization header",
+                        "required": true
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Admin id",
+                        "schema": {
+                            "$ref": "#/definitions/InitiateRPP"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Initiate RPP success response",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Something went wrong",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Empty field in request",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Error response from DB",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/admin/rejectRPP": {
+            "put": {
+                "tags": [
+                    "Admin"
+                ],
+                "description": "Reject an RPP",
+                "operationId": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "x-access-token",
+                        "in": "header",
+                        "description": "an authorization header",
+                        "required": true
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Admin Id and RPP Id",
+                        "schema": {
+                            "$ref": "#/definitions/RejectRPP"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Reject RPP success response",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Something went wrong",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Empty field in request",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Error response from DB",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/admin/{id}/transaction": {
+            "post": {
+                "tags": [
+                    "Admin"
+                ],
+                "description": "Create Transactions",
+                "operationId": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "x-access-token",
+                        "in": "header",
+                        "description": "an authorization header",
+                        "required": true
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Admin id",
+                        "schema": {
+                            "$ref": "#/definitions/GetAllBuyers"
+                        }
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Transaction detail",
+                        "schema": {
+                            "$ref": "#/definitions/TransactionDetails"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get all Buyer success response",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Something went wrong",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Empty field in request",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Error response from DB",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/admin/notifyBuyer": {
+            "put": {
+                "tags": [
+                    "Admin"
+                ],
+                "description": "Notify Buyer of due escrow payment ",
+                "operationId": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "x-access-token",
+                        "in": "header",
+                        "description": "an authorization header",
+                        "required": true
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Admin id",
+                        "schema": {
+                            "$ref": "#/definitions/notifyBuyerRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Initiate RPP success response",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Something went wrong",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Empty field in request",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Error response from DB",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/admin/{id}/bid/{RPPId}": {
+            "get": {
+                "tags": [
+                    "Admin"
+                ],
+                "description": "Get All Bids of an RPP",
+                "operationId": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "x-access-token",
+                        "in": "header",
+                        "description": "an authorization header",
+                        "required": true
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Admin id",
+                        "schema": {
+                            "$ref": "#/definitions/GetAllBuyers"
+                        }
+                    },
+                    {
+                        "name": "RPPId",
+                        "in": "path",
+                        "description": "RPP id",
+                        "schema": {
+                            "$ref": "#/definitions/GetAllBuyers"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get RPP success response",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Something went wrong",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Empty field in request",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Error response from DB",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/admin/{id}/updateCredit": {
+            "put": {
+                "tags": [
+                    "Admin"
+                ],
+                "description": "update credit of a seller",
+                "operationId": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "x-access-token",
+                        "in": "header",
+                        "description": "an authorization header",
+                        "required": true
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Admin id",
+                        "schema": {
+                            "$ref": "#/definitions/GetAllBuyers"
+                        }
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Add User Request",
+                        "schema": {
+                            "$ref": "#/definitions/updateCreditRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "update credit success response",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Something went wrong",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Empty field in request",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Error response from DB",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/buyer/{id}/RPP": {
+            "get": {
+                "tags": [
+                    "Buyer"
+                ],
+                "description": "Get all RPP",
+                "operationId": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "x-access-token",
+                        "in": "header",
+                        "description": "an authorization header",
+                        "required": true
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Buyer id",
+                        "schema": {
+                            "$ref": "#/definitions/GetAllBuyers"
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "page",
+                        "schema": {
+                            "$ref": "#/definitions/GetAllBuyers"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "limit",
+                        "schema": {
+                            "$ref": "#/definitions/GetAllBuyers"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get all RPP success response",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Something went wrong",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Empty field in request",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Error response from DB",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/buyer/{id}/RPP/{RPPId}/Bids": {
+            "get": {
+                "tags": [
+                    "Buyer"
+                ],
+                "description": "Get Tie Bids",
+                "operationId": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "x-access-token",
+                        "in": "header",
+                        "description": "an authorization header",
+                        "required": true
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Buyer id",
+                        "schema": {
+                            "$ref": "#/definitions/GetTieBids"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get Tie bids success response",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Something went wrong",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Empty field in request",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Error response from DB",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/buyer/estimateRPP": {
+            "post": {
+                "tags": [
+                    "Buyer"
+                ],
+                "description": "Get estimate price of an RPP",
+                "operationId": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "x-access-token",
+                        "in": "header",
+                        "description": "an authorization header",
+                        "required": true
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Add User Request",
+                        "schema": {
+                            "$ref": "#/definitions/estimateRPPRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get all zones of an ISO success response",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Something went wrong",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Empty field in request",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Error response from DB",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/buyer/createRPP": {
+            "post": {
+                "tags": [
+                    "Buyer"
+                ],
+                "description": "Buyer creates an RPP",
+                "operationId": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "x-access-token",
+                        "in": "header",
+                        "description": "an authorization header",
+                        "required": true
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Add User Request",
+                        "schema": {
+                            "$ref": "#/definitions/createRPPRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get all zones of an ISO success response",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Something went wrong",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Empty field in request",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Error response from DB",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/buyer/fundRPP": {
+            "post": {
+                "tags": [
+                    "Buyer"
+                ],
+                "description": "Buyer deposits monthly fund of an RPP",
+                "operationId": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "x-access-token",
+                        "in": "header",
+                        "description": "an authorization header",
+                        "required": true
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Add User Request",
+                        "schema": {
+                            "$ref": "#/definitions/fundRPPRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get all zones of an ISO success response",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Something went wrong",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Empty field in request",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Error response from DB",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/buyer/refundRPP": {
+            "put": {
+                "tags": [
+                    "Buyer"
+                ],
+                "description": "Buyer re-deposits monthly fund of an RPP",
+                "operationId": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "x-access-token",
+                        "in": "header",
+                        "description": "an authorization header",
+                        "required": true
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Add User Request",
+                        "schema": {
+                            "$ref": "#/definitions/fundRPPRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get all zones of an ISO success response",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Something went wrong",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Empty field in request",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Error response from DB",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/buyer/resolveTie": {
+            "post": {
+                "tags": [
+                    "Buyer"
+                ],
+                "description": "Buyer resolve tie of an RPP",
+                "operationId": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "x-access-token",
+                        "in": "header",
+                        "description": "an authorization header",
+                        "required": true
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Resolve Tie Request",
+                        "schema": {
+                            "$ref": "#/definitions/resolveTieRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Resolve Tie success response",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Something went wrong",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Empty field in request",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Error response from DB",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/seller/{id}/RPP": {
+            "get": {
+                "tags": [
+                    "Seller"
+                ],
+                "description": "Get all RPP",
+                "operationId": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "x-access-token",
+                        "in": "header",
+                        "description": "an authorization header",
+                        "required": true
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Seller id",
+                        "schema": {
+                            "$ref": "#/definitions/GetAllBuyers"
+                        }
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "description": "filter",
+                        "schema": {
+                            "$ref": "#/definitions/GetAllBuyers"
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "page",
+                        "schema": {
+                            "$ref": "#/definitions/GetAllBuyers"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "limit",
+                        "schema": {
+                            "$ref": "#/definitions/GetAllBuyers"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get all RPP success response",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Something went wrong",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Empty field in request",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Error response from DB",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/seller/bid": {
+            "post": {
+                "tags": [
+                    "Seller"
+                ],
+                "description": "Create Bid",
+                "operationId": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "x-access-token",
+                        "in": "header",
+                        "description": "an authorization header",
+                        "required": true
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Create Bid Request",
+                        "schema": {
+                            "$ref": "#/definitions/CreateBid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Create bid success response",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Something went wrong",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Empty field in request",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Error response from DB",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/seller/{id}/bid": {
+            "put": {
+                "tags": [
+                    "Seller"
+                ],
+                "description": "Update Bid",
+                "operationId": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "x-access-token",
+                        "in": "header",
+                        "description": "an authorization header",
+                        "required": true
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Seller id",
+                        "schema": {
+                            "$ref": "#/definitions/GetAllBuyers"
+                        }
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Create Bid Request",
+                        "schema": {
+                            "$ref": "#/definitions/UpdateBid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get update bid success response",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Something went wrong",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Empty field in request",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Error response from DB",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/seller/{id}/bid/{RPPId}": {
+            "get": {
+                "tags": [
+                    "Seller"
+                ],
+                "description": "Get Bid",
+                "operationId": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "x-access-token",
+                        "in": "header",
+                        "description": "an authorization header",
+                        "required": true
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Seller id",
+                        "schema": {
+                            "$ref": "#/definitions/GetAllBuyers"
+                        }
+                    },
+                    {
+                        "name": "RPPId",
+                        "in": "path",
+                        "description": "RPP id",
+                        "schema": {
+                            "$ref": "#/definitions/GetAllBuyers"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get update bid success response",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Something went wrong",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Empty field in request",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Error response from DB",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "LoginRequest": {
+            "properties": {
+                "email": {
+                    "required": true,
+                    "type": "string",
+                    "example": "admin@verdeblocks.com"
+                },
+                "password": {
+                    "required": true,
+                    "type": "string",
+                    "example": "User@123"
+                }
+            }
+        },
+        "SetPasswordResquest": {
+            "properties": {
+                "oldPassword": {
+                    "required": true,
+                    "type": "string",
+                    "example": "Test@123"
+                },
+                "newPassword": {
+                    "required": true,
+                    "type": "string",
+                    "example": "Abc@123"
+                }
+            }
+        },
+        "AddUserRequest": {
+            "properties": {
+                "role": {
+                    "required": true,
+                    "type": "string",
+                    "example": "buyer"
+                },
+                "email": {
+                    "required": true,
+                    "type": "string",
+                    "example": "admin@verdeblocks.com"
+                },
+                "companyName": {
+                    "required": true,
+                    "type": "string",
+                    "example": "Newgen"
+                },
+                "address": {
+                    "required": true,
+                    "type": "string",
+                    "example": "Noida India"
+                },
+                "contactName": {
+                    "required": true,
+                    "type": "string",
+                    "example": "John"
+                },
+                "title": {
+                    "required": true,
+                    "type": "string",
+                    "example": "CTO"
+                },
+                "phone": {
+                    "required": true,
+                    "type": "string",
+                    "example": "9456789852"
+                },
+                "signetAccount": {
+                    "required": true,
+                    "type": "string",
+                    "example": "1112000548"
+                },
+                "creditLimit": {
+                    "required": true,
+                    "type": "number",
+                    "example": 500
+                },
+                "creditAvailable": {
+                    "required": true,
+                    "type": "number",
+                    "example": 200
+                },
+                "id": {
+                    "required": true,
+                    "type": "number",
+                    "example": 1
+                }
+            }
+        },
+        "TransactionDetails": {
+            "properties": {
+                "timestamp": {
+                    "required": true,
+                    "type": "number",
+                    "example": 1551087715
+                },
+                "RECVolume": {
+                    "required": true,
+                    "type": "number",
+                    "example": 1500
+                },
+                "RECAmount": {
+                    "required": true,
+                    "type": "number",
+                    "example": 1500
+                },
+                "EnergyVolume": {
+                    "required": true,
+                    "type": "number",
+                    "example": 1500
+                },
+                "EnergyAmount": {
+                    "required": true,
+                    "type": "number",
+                    "example": 1500
+                },
+                "RPPId": {
+                    "required": true,
+                    "type": "number",
+                    "example": 1
+                },
+                "toSellerId": {
+                    "required": true,
+                    "type": "number",
+                    "example": 3
+                },
+                "recieptNumber": {
+                    "required": true,
+                    "type": "string",
+                    "example": "RECIPET101"
+                }
+            }
+        },
+        "CreateBid": {
+            "properties": {
+                "timestamp": {
+                    "required": true,
+                    "type": "number",
+                    "example": 1551087715123
+                },
+                "energyValue": {
+                    "required": true,
+                    "type": "number",
+                    "example": 15.00
+                },
+                "RECValue": {
+                    "required": true,
+                    "type": "number",
+                    "example": 15.00
+                },
+                "totalValue": {
+                    "required": true,
+                    "type": "number",
+                    "example": 30.00
+                },
+                "RPPId": {
+                    "required": true,
+                    "type": "number",
+                    "example": 1
+                },
+                "id": {
+                    "required": true,
+                    "type": "number",
+                    "example": 1
+                }
+            }
+        },
+        "UpdateBid": {
+            "properties": {
+                "timestamp": {
+                    "required": true,
+                    "type": "number",
+                    "example": 1551087715123
+                },
+                "energyValue": {
+                    "required": true,
+                    "type": "number",
+                    "example": 15.00
+                },
+                "RECValue": {
+                    "required": true,
+                    "type": "number",
+                    "example": 15.00
+                },
+                "totalValue": {
+                    "required": true,
+                    "type": "number",
+                    "example": 30.00
+                },
+                "RPPId": {
+                    "required": true,
+                    "type": "number",
+                    "example": 1
+                }
+            }
+        },
+        "LoginSuccess": {
+            "properties": {
+                "accessToken": {
+                    "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6Ikp.nqoAkcSQXjDAgEwCis1KNyFAyij_YujN6aJzSlGqoos",
+                    "type": "string"
+                },
+                "userId": {
+                    "example": 1,
+                    "type": "string"
+                },
+                "email": {
+                    "example": "admin@verdeblocks.com",
+                    "type": "string"
+                },
+                "role": {
+                    "example": "buyer",
+                    "type": "string"
+                }
+            }
+        },
+        "GetAllBuyers": {
+            "properties": {
+                "id": {
+                    "example": 1,
+                    "type": "number"
+                }
+            }
+        },
+        "GetAllSellers": {
+            "properties": {
+                "id": {
+                    "example": 1,
+                    "type": "number"
+                }
+            }
+        },
+        "GetTieBids": {
+            "properties": {
+                "id": {
+                    "example": 1,
+                    "type": "number"
+                },
+                "RPPId": {
+                    "example": 1,
+                    "type": "number"
+                }
+            }
+        },
+        "GetAllZones": {
+            "properties": {
+                "id": {
+                    "example": 1,
+                    "type": "number"
+                },
+                "ISO": {
+                    "example": "PJM",
+                    "type": "string"
+                }
+            }
+        },
+        "GetAllRECTypes": {
+            "properties": {
+                "id": {
+                    "example": 1,
+                    "type": "number"
+                },
+                "state": {
+                    "example": "Solar",
+                    "type": "string"
+                }
+            }
+        },
+        "GetAllYears": {
+            "properties": {
+                "id": {
+                    "example": 1,
+                    "type": "number"
+                },
+                "RECType": {
+                    "example": "NJ Solar",
+                    "type": "string"
+                },
+                "state": {
+                    "example": "Solar",
+                    "type": "string"
+                }
+            }
+        },
+        "updateCreditRequest": {
+            "properties": {
+                "role": {
+                    "example": "buyer",
+                    "type": "string"
+                },
+                "userId": {
+                    "example": 3,
+                    "type": "number"
+                },
+                "creditLimit": {
+                    "example": 100,
+                    "type": "number"
+                },
+                "creditAvailable": {
+                    "example": 100,
+                    "type": "number"
+                }
+            }
+        },
+        "estimateRPPRequest": {
+            "properties": {
+                "id": {
+                    "example": 1,
+                    "type": "number"
+                },
+                "deliveryTimeFrom": {
+                    "example": 1550829818446,
+                    "type": "number"
+                },
+                "deliveryTimeTo": {
+                    "example": 1560839818446,
+                    "type": "number"
+                },
+                "ISOzoneId": {
+                    "example": 1,
+                    "type": "number"
+                },
+                "shape": {
+                    "example": "ONPEAK",
+                    "type": "string"
+                },
+                "volume": {
+                    "example": 100,
+                    "type": "number"
+                },
+                "RECId": {
+                    "example": 1,
+                    "type": "number"
+                },
+                "RECAmountType": {
+                    "example": "SPECIFIC",
+                    "type": "string"
+                },
+                "RECVolume": {
+                    "example": 100,
+                    "type": "number"
+                }
+            }
+        },
+        "createRPPRequest": {
+            "properties": {
+                "id": {
+                    "example": 1,
+                    "type": "number"
+                },
+                "deliveryTimeFrom": {
+                    "example": 1550829818446,
+                    "type": "number"
+                },
+                "deliveryTimeTo": {
+                    "example": 1550839818446,
+                    "type": "number"
+                },
+                "ISOzoneId": {
+                    "example": 1,
+                    "type": "number"
+                },
+                "shape": {
+                    "example": "onPeak",
+                    "type": "string"
+                },
+                "primaryPowerSource": {
+                    "example": "solar",
+                    "type": "string"
+                },
+                "volume": {
+                    "example": 100,
+                    "type": "number"
+                },
+                "RECId": {
+                    "example": 1,
+                    "type": "number"
+                },
+                "RECVolume": {
+                    "example": 100,
+                    "type": "number"
+                },
+                "initialResponseBy": {
+                    "example": 1550819818446,
+                    "type": "date"
+                },
+                "timezone": {
+                    "example": "EST",
+                    "type": "string"
+                },
+                "totalEstimateEnergyValue": {
+                    "example": 600,
+                    "type": "number"
+                },
+                "totalEstimateEnergyMonthlyValue": {
+                    "example": 100,
+                    "type": "number"
+                },
+                "totalEstimateRECValue": {
+                    "example": 600,
+                    "type": "number"
+                },
+                "totalEstimateRECMonthlyValue": {
+                    "example": 100,
+                    "type": "number"
+                },
+                "RECAttribute": {
+                    "example": "Specific to bid source",
+                    "type": "string"
+                },
+                "sellerRanking": {
+                    "example": [3,6,9],
+                    "type": "array"
+                }
+            }
+        },
+        "GetRPPId": {
+            "properties": {
+                "RPPId": {
+                    "example": 1,
+                    "type": "number"
+                }
+            }
+        },
+        "fundRPPRequest": {
+            "properties": {
+                "id": {
+                    "example": 2,
+                    "type": "number"
+                },
+                "RPPId": {
+                    "example": 1,
+                    "type": "number"
+                },
+                "escrowReciepts": {
+                    "example": "Reciept101",
+                    "type": "string"
+                }
+            }
+        },
+        "resolveTieRequest": {
+            "properties": {
+                "id": {
+                    "example": 2,
+                    "type": "number"
+                },
+                "RPPId": {
+                    "example": 1,
+                    "type": "number"
+                },
+                "sellerId": {
+                    "example": 1,
+                    "type": "number"
+                }
+            }
+        },
+        "InitiateRPP": {
+            "properties": {
+                "id": {
+                    "example": 2,
+                    "type": "number"
+                },
+                "RPPId": {
+                    "example": 1,
+                    "type": "number"
+                },
+                "energyFee": {
+                    "example": 0.5,
+                    "type": "number"
+                },
+                "RECFee": {
+                    "example": 0.5,
+                    "type": "number"
+                }
+            }
+        },
+        "notifyBuyerRequest": {
+            "properties": {
+                "id": {
+                    "example": 2,
+                    "type": "number"
+                },
+                "RPPId": {
+                    "example": 1,
+                    "type": "number"
+                },
+                "buyerId": {
+                    "example": 2,
+                    "type": "number"
+                }
+            }
+        },
+        "RejectRPP": {
+            "properties": {
+                "id": {
+                    "example": 2,
+                    "type": "number"
+                },
+                "RPPId": {
+                    "example": 1,
+                    "type": "number"
+                }
+            }
+        },
+        "InvalidUser": {
+            "properties": {
+                "message": {
+                    "example": "User does not exists",
+                    "type": "string"
+                }
+            }
+        },
+        "SuccessResponse": {
+            "properties": {
+                "message": {
+                    "example": "Success message!"
+                },
+                "success": {
+                    "type": "bool",
+                    "example": true
+                }
+            }
+        },
+        "ErrorResponse": {
+            "properties": {
+                "error": {
+                    "example": "contains error object or message"
+                },
+                "success": {
+                    "type": "bool",
+                    "example": false
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,63 @@
+{
+  "name": "verdeblocks",
+  "version": "1.0.0",
+  "description": "Verde Blocks",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "cron": "node scripts/cronJob.js",
+    "price-seed": "node scripts/pricePopulate.js",
+    "debug": "nodemon --inspect server.js",
+    "lint": "eslint ./",
+    "lint-fix": "eslint --fix ./",
+    "test": "mocha --timeout 3000000000000 ./test/**/*.js",
+    "db-migrate": "node_modules/.bin/sequelize db:migrate",
+    "run-seeds": "node_modules/.bin/sequelize db:seed:all"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "author": "OM",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^3.0.0",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.3",
+    "boom": "^7.3.0",
+    "config": "^3.0.1",
+    "cors": "^2.8.5",
+    "cron": "^1.6.0",
+    "csurf": "^1.9.0",
+    "exceljs": "^1.7.0",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "fs": "0.0.1-security",
+    "generate-password": "^1.4.1",
+    "joi": "^14.3.1",
+    "jsonwebtoken": "^8.4.0",
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.25",
+    "multer": "^1.4.1",
+    "mustache": "^3.0.1",
+    "nodemailer": "^5.1.1",
+    "path": "^0.12.7",
+    "pg": "^7.8.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.42.0",
+    "sequelize-cli": "^5.4.0",
+    "should": "^13.2.3",
+    "socket.io": "^2.2.0",
+    "swagger-ui-express": "^4.0.2",
+    "web-push": "^3.3.3",
+    "winston": "^3.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.13.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "mocha": "^6.0.2",
+    "nodemon": "^1.18.9",
+    "pre-commit": "^1.2.2"
+  }
+}

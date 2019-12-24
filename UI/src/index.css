@@ -1,0 +1,499 @@
+.align-right {
+  padding-right: 5%;
+  text-align: right;
+}
+
+.align-right-override {
+  text-align: left !important;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.App, html, body, #root, .app-container {
+  background: #F0F0F0;
+  height: 100%;
+}
+
+.app-container {
+  background: #f0f0f0;
+  margin: 0.5%;
+}
+
+.app-content {
+  border: solid 5px;
+  margin-top: 0.5%;
+}
+
+.backBtn {
+  font-size: 28px;
+  left: 85px;
+  position: absolute;
+  top: 225px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.buttonStyle {
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: bold;
+  height: 45px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card-container {
+  height: 280px;
+  width: 278px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.copyright-text {
+  font-size: 15px;
+}
+
+.content {
+  word-wrap: break-word;
+}
+
+.content-container {
+  padding: 5% 20%;
+}
+
+.content>p {
+  margin-bottom: 0 !important;
+}
+
+.css-vj8t7z, .css-1hwfws3 {
+  height: 40px;
+}
+
+.app-content .css-vj8t7z {
+  width: 192px;
+}
+
+.app-content .css-2o5izw {
+  width: 192px;
+}
+
+.css-1492t68 {
+  color: grey !important;
+}
+
+.css-vj8t7z {
+  border-color: #0B175F !important;
+}
+
+.effect {
+  margin-right: 2%;
+  box-shadow: 0 15px 15px 1px #777;
+}
+
+.float-right {
+  float: right !important;
+  background-color: #008000 !important;
+}
+
+.font-default {
+  font-size: 1rem;
+}
+
+input[type='radio']:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: #ffffff;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid #0B175F;
+}
+
+input[type='radio']:checked:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: #ffffff;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 5px solid #0B175F;
+}
+
+.line {
+  border: #808080 solid 1px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.link-button {
+  color: red;
+}
+
+.logo {
+  width: 40%;
+  display: inline-block;
+}
+
+.logoBanner {
+  padding-top: 30%;
+  padding-left: 10%;
+  width: 75%;
+}
+
+.menu .active>a {
+  color: #021f54;
+  background: #E7F0ED !important;
+}
+
+.navigationmenu a, .navigationmenu button {
+  color: #021f54;
+}
+
+.navigationmenu button {
+  padding: 0.7rem 1rem;
+}
+
+.navigationmenu>li.active {
+  color: #021f54;
+  background: #E7F0ED !important;
+}
+
+.nextBtn {
+  font-size: 28px;
+  position: absolute;
+  right: 85px;
+  top: 225px;
+}
+
+.paddingBottom {
+  padding-bottom: 5px;
+}
+
+.paddingBoth {
+  padding: 3%;
+  padding-bottom: 3%;
+}
+
+.paddingBottomLarge {
+  padding-bottom: 50px;
+}
+
+.paddingTop {
+  padding-top: 20px;
+}
+
+.paddingLeftNull {
+  display: inline;
+  padding-left: 0%;
+}
+
+.paddingLeft {
+  display: inline;
+  padding-left: 6%;
+}
+
+.search {
+  font-size: 24px;
+  padding-top: 35%;
+}
+
+.submitBtn {
+  border: solid 2px #7e7e7e;
+  height: 40px;
+  width: 120px;
+}
+
+.react-date-picker {
+  border-radius: 10px;
+  border: 1px solid #0B175F;
+}
+
+.react-date-picker, .react-date-picker *, .react-date-picker *:before, .react-date-picker *:after {
+  color: #0B175F;
+}
+
+.react-tabs__tab {
+  background-color: #7A7A7A;
+  color: #FFFFFF;
+  width: 50%;
+  height: 100px;
+  line-height: 5em;
+  text-align: center;
+}
+
+.react-tabs__tab--selected {
+  background-color: #7DB797 !important;
+  color: #FFFFFF !important;
+  border-radius: 0 0 0 0 !important;
+}
+
+.top-bar {
+  padding: 0.2rem;
+}
+
+.top-bar-left ul {
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.transition {
+  box-shadow: 0 10px 6px -6px #777;
+}
+
+.text-color {
+  color: #0B175F;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.text-position {
+  color: #0B175F;
+  font-weight: bold;
+  text-align: center;
+  float: right;
+  width: 35%;
+  line-height: 2.5em;
+}
+
+[type='checkbox'] {
+  width: 16px;
+  height: 16px;
+}
+
+.react-datepicker__input-container input {
+  border: 1px solid black;
+  border-radius: 8px;
+  color: rgb(2, 31, 84);
+  margin-bottom: 3%;
+}
+
+.react-datepicker__time-container, .react-datepicker__time-box {
+  width: 100px !important;
+}
+
+.react-datepicker__time, ul.react-datepicker__time-list {
+  width: 99px !important;
+}
+
+li.react-datepicker__time-list-item {
+  padding: 0px 10px !important;
+  height: 25px !important;
+}
+
+.noDataExists {
+  height: 100px;
+  text-align: center;
+  font-weight: bold;
+  border: 2px solid grey;
+  padding: 3%;
+  margin: 0.5% 0% 0% 0%;
+}
+
+.pageLink {
+  font-weight: bold;
+  padding-top: 5%;
+  text-align: center;
+  width: 70px;
+}
+
+.pageLink button:active {
+  color: white;
+  background: #0B175F
+
+}
+
+.pageLink button:focus {
+    outline: none;
+    cursor: pointer;
+  }
+
+.pageLinkMargins {
+  background:ghostwhite;
+  margin-left: 0%;
+  padding-top: 0.5%;
+}
+
+.previousButton {
+  color: #FFFFFF;
+  background-color: #FF8C00;
+  width: 180px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.nextButton {
+  background-color: #2a0d45;
+}
+
+.displayOff {
+  display: none;
+}
+
+.displayOn {
+  display: inline-flex;
+}
+
+.width-Small-2 {
+  width: 13.5%;
+}
+
+.redHighlight {
+  color: red;
+}
+
+.disabled {
+  background-color: grey;
+}
+
+.buttonBgNext {
+  background-color: #72B18E;
+}
+
+.buttonBgCancel {
+  background-color: #DB9345;
+}
+
+.buttonBgPrevious {
+  background-color: #7A7A7A;
+  height: 40px;
+}
+
+.buttonBgSubmit {
+  background-color: #72B18E;
+}
+
+.textAdjust {
+  padding: 35px 0;
+  text-align: center;
+}
+
+.textInputStyle {
+  border: 1px solid #0B175F !important;
+  border-radius: 8px;
+  color: #0B175F;
+  margin-bottom: 3%;
+}
+
+.buttonConfirm {
+  background-color: #008000;
+  color: white;
+  font-weight: bold;
+  width: 180px;
+  height: 40px;
+}
+
+.buttonCancel {
+  background-color: #ff6624;
+}
+
+.headerRightPanel {
+  padding-top: 3%;
+}
+
+@media only screen and (max-width: 1024px) {
+  .menu {
+    font-size: 95%;
+  }
+  .menu a {
+    padding: 0.5rem 0.7rem;
+  }
+  .search {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .menu {
+    font-size: 86%;
+  }
+  .menu a {
+    padding: 0.3rem 0.3rem;
+  }
+  .search {
+    font-size: 14px;
+    padding-top: 25%;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .menu {
+    font-size: 86%;
+    position: absolute;
+    right: 5%;
+    top: 3%;
+    z-index: 10;
+  }
+  .displayMenuOff {
+    display: none;
+  }
+  .menu a {
+    padding: 0.3rem 0.3rem;
+  }
+  .search {
+    font-size: 14px;
+    padding-top: 0%;
+    padding-left: 5%;
+  }
+  ul {
+    margin-bottom: 0.7em;
+    margin-top: 0.7em;
+    margin-left: 0em;
+  }
+  .menu .active>a {
+    background: #c1dcd3 !important;
+  }
+  .hamburgerMenuPosition {
+    position: absolute;
+    right: 0;
+    padding: 1%;
+    cursor: pointer;
+  }
+  .hamburgerMenuIcon1, .hamburgerMenuIcon2, .hamburgerMenuIcon3 {
+    width: 15px;
+    height: 3px;
+    background-color: black;
+    margin: 3px 0;
+  }
+  .hamChange .hamburgerMenuIcon1 {
+    -webkit-transform: rotate(-45deg) translate(-3px, 3px);
+    transform: rotate(-45deg) translate(-4px, 5px);
+  }
+  .hamChange .hamburgerMenuIcon2 {
+    opacity: 0;
+  }
+  .hamChange .hamburgerMenuIcon3 {
+    -webkit-transform: rotate(45deg) translate(-3px, -5px);
+    transform: rotate(45deg) translate(-3px, -5px);
+  }
+}
+
+.pageLink > .active {
+  background-color:#337ab7;
+  color: white;
+  padding: 5%;  
+}

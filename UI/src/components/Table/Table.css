@@ -1,0 +1,152 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.container {
+  height: 330px !important;
+  width: 30vw;
+  overflow: auto;
+  font-weight: bold;
+  margin: 0% 5% 0.5% 5%;
+}
+
+.container .table {
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.container .table .header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  padding:0px;
+  text-align: center;
+  width: 100%;
+}
+
+.container .table .header .shadow {
+  position: absolute;
+  top: 31px;
+}
+
+.container .table .header .hcol {
+  background-color: #cccccc;
+  border: 1px solid #585656;
+  padding:10px;
+  color: #1F384D;
+  box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.5);
+}
+
+.container .table .header.fixed {
+  background: #e5e8eb;
+  z-index: 99;
+  position: fixed;
+  top: 0px;
+}
+
+.container .table .header.fixed .shadow {
+  height: 3px;
+  width: 100%;
+}
+
+.container .table .main-heading {
+  width: 100%;
+  min-height: 83px;
+  border-bottom: 1px solid #585656;
+}
+
+.container .table .heading {
+  display: flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  width: 100%;
+  padding:0px;
+  transition: background 0.5s;
+}
+
+.container .table .heading .col {
+  border: 1px solid #585656;
+  padding:10px;
+  box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.5);
+  word-wrap: break-word;
+}
+
+.container .table .heading .deliveryInfo {
+  align-items: center;
+  width: 1650px;
+  padding: 0 7px;
+  height: 83px;
+  border-right: 1px solid #585656;
+  border-left: 1px solid #585656;
+  line-height: 5em;
+  box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.5);
+  white-space: nowrap;
+}
+
+.container .table .content {
+  width: 100%;
+  height: 0px;
+  opacity: 0;
+  text-align: left;
+  transition: height 1s;
+}
+
+.container .table div.open .heading {
+  background: #4d98bc;
+  color: #ffffff;
+}
+
+.container .table div.open .heading .col {
+  border: none;
+}
+
+.container .table div.open .content {
+  height: 300px;
+  opacity: 1;
+}
+
+.buttonProp {
+  margin-top: 2%;
+  color: white;
+  font-weight: bold;
+   height: 35px;
+   padding: 0% 20%;
+   cursor: pointer;
+}
+
+.buttonBg1 {
+  background-color: tomato;
+}
+
+.buttonBg2 {
+  background-color: #337ab7;
+}
+
+.buttonBg3 {
+  background-color: brown;
+}
+
+.buttonBg4 {
+  background-color: mediumseagreen;
+}
+
+.buttonBg5 {
+  background-color: teal;
+}
+
+.cursorHand {
+  cursor: pointer;
+}

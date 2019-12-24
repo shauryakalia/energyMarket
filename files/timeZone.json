@@ -1,0 +1,28 @@
+{
+  "timeZone": [
+    {
+      "value": "Pacific/Honolulu",
+      "label": "HST(HAWAII STANDARD TIME)"
+    },
+    {
+      "value": "America/Anchorage",
+      "label": "AKST(ALASKA TIME)"
+    },
+    {
+      "value": "America/Los_Angeles",
+      "label": "PST(PACIFIC STANDARD TIME)"
+    },
+    {
+      "value": "America/Denver",
+      "label": "MST(MOUNTAIN STANDARD TIME)"
+    },
+    {
+      "value": "America/Chicago",
+      "label": "CST(CENTRAL STANDARD TIME)"
+    },
+    {
+      "value": "America/New_York",
+      "label": "EST(EASTERN STANDARD TIME)"
+    }
+  ]
+}

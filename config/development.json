@@ -1,0 +1,18 @@
+{
+  "General": {
+    "port": 5000,
+    "csrfKey": "omsahyiannk",
+    "secretKey": "verde123",
+    "email": "blockchain.coe2018@gmail.com",
+    "apiKey": "apikey",
+    "password": "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"
+  },
+  "dbConfig": {
+    "username": "apn",
+    "password": "system123",
+    "name": "vblocks",
+    "host": "127.0.0.1",
+    "port": "5432",
+    "dialect": "postgres"
+  }
+}
